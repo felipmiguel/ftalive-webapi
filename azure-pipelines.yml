@@ -21,12 +21,10 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/ftalive-webapi/Dockerfile'
-        tags: |
-          $(tag)
-    - task: Docker@2
-      displayName: Push image to ACR
+        containerRegistry: 'WebAPI - Registry'
+        repository: 'webapi'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+      
       
