@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["ftalive-webapi/ftalive-webapi.csproj", "ftalive-webapi/"]
-RUN dotnet restore "ftalive-webapi/ftalive-webapi.csproj"
+COPY ["ftalive-webapi.csproj", "."]
+RUN dotnet restore "ftalive-webapi.csproj"
 COPY . .
-WORKDIR "/src/ftalive-webapi"
+WORKDIR "."
 RUN dotnet build "ftalive-webapi.csproj" -c Release -o /app/build
 
 FROM build AS publish
