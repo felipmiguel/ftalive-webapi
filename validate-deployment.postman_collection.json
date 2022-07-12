@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "8e0c6ed4-1fd8-4711-894b-ae4e76d76b60",
+		"name": "validate deployment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3050822"
+	},
+	"item": [
+		{
+			"name": "Get Weather",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"There is data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.greaterThan(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ftalive-api.azurewebsites.net/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"ftalive-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
