@@ -26,7 +26,7 @@ stages:
         repository: 'webapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-  - job: Publish test collection
+  - job: Publish_test_collection
     displayName: publish test collection
     pool:
       name: 'self-hosted pool'
