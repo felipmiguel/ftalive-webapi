@@ -26,5 +26,19 @@ stages:
         repository: 'webapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+  - job: Publish_test_collection
+    displayName: publish test collection
+    pool:
+      name: 'self-hosted pool'
+    steps:
+    - task: CopyFiles@2
+      inputs:
+        Contents: '*.postman_collection.json'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'tests'
+        publishLocation: 'Container'
       
       
