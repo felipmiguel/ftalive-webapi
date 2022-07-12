@@ -29,7 +29,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://ftalive-api.azurewebsites.net/WeatherForecast",
+					"raw": "https://ftalive-api.azurewebsites.net/WeatherForecast3",
 					"protocol": "https",
 					"host": [
 						"ftalive-api",
