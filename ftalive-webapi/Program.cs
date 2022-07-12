@@ -19,14 +19,15 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          if (oc.AllowAll)
-                          {
-                              policy.AllowAnyOrigin();
-                          }
-                          else
-                          {
-                              policy.WithOrigins(oc.AllowedOrigins);
-                          }
+                          policy.AllowAnyOrigin();
+                          //if (oc.AllowAll)
+                          //{
+                          //    policy.AllowAnyOrigin();
+                          //}
+                          //else
+                          //{
+                          //    policy.WithOrigins(oc.AllowedOrigins);
+                          //}
                       });
 });
 
