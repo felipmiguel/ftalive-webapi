@@ -19,7 +19,8 @@
 							"pm.test(\"There is data\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.length).to.greaterThan(1);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -29,12 +30,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://ftalive-api.azurewebsites.net/WeatherForecast3",
-					"protocol": "https",
+					"raw": "{{baseUrl}}/WeatherForecast",
 					"host": [
-						"ftalive-api",
-						"azurewebsites",
-						"net"
+						"{{baseUrl}}"
 					],
 					"path": [
 						"WeatherForecast"
@@ -42,6 +40,12 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://ftalive-api.azurewebsites.net"
 		}
 	]
 }
